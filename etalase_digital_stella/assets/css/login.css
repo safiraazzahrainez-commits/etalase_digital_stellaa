@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+html {
+    /* Memaksa browser selalu menampilkan ruang scrollbar secara permanen */
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+}
+
+:root {
+    --maroon-dark: #4A0404;
+    --maroon-primary: #800000;
+    --maroon-light: #A52A2A;
+    --maroon-soft: #FDF2F2;
+    --text-dark: #222222;
+    --text-muted: #666666;
+    --white: #FFFFFF;
+    --border: #E2D4D4;
+}
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body { 
+    background-color: #FAFAFA; 
+    color: var(--text-dark); 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
+}
+
+/* ================= AUTHENTICATION (LOGIN & REGISTER) ================= */
+.auth-wrapper { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex: 1; 
+    background: #FAFAFA; 
+    padding: 40px 20px; 
+}
+
+.auth-card { 
+    background: var(--white); 
+    width: 100%; 
+    max-width: 440px; 
+    padding: 40px 35px; 
+    border-radius: 16px; 
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06); 
+    border: 1px solid #EFEFEF;
+    text-align: center; 
+}
+
+.auth-logo { 
+    width: 70px; 
+    margin-bottom: 15px; 
+    object-fit: contain;
+}
+
+.auth-title { 
+    color: #111111; 
+    font-size: 1.5rem; 
+    font-weight: 700; 
+    margin-bottom: 4px; 
+    letter-spacing: -0.3px;
+}
+
+.auth-subtitle { 
+    color: var(--text-muted); 
+    font-size: 0.9rem; 
+    margin-bottom: 28px; 
+    line-height: 1.4;
+}
+
+.form-group { 
+    text-align: left; 
+    margin-bottom: 18px; 
+}
+
+.form-group label { 
+    display: block; 
+    font-size: 0.85rem; 
+    font-weight: 600; 
+    color: #333333; 
+    margin-bottom: 6px; 
+}
+
+.form-group input, 
+.form-group textarea, 
+.form-group select { 
+    width: 100%; 
+    padding: 12px 14px; 
+    border: 1.5px solid var(--border); 
+    border-radius: 10px; 
+    font-size: 0.95rem; 
+    outline: none; 
+    transition: 0.2s; 
+    background: #FFFFFF;
+    color: var(--text-dark);
+}
+
+.form-group input:focus, 
+.form-group textarea:focus, 
+.form-group select:focus { 
+    border-color: #5A0000; 
+    box-shadow: 0 0 0 3px rgba(128, 0, 0, 0.08);
+}
+
+.btn-maroon { 
+    width: 100%; 
+    padding: 12px; 
+    background: #5A0000; 
+    color: var(--white); 
+    border: none; 
+    border-radius: 10px; 
+    font-size: 1rem; 
+    font-weight: 600; 
+    cursor: pointer; 
+    transition: background 0.2s; 
+    margin-top: 5px;
+}
+
+.btn-maroon:hover { 
+    background: #4A0404; 
+}
+
+.auth-footer-text { 
+    margin-top: 22px; 
+    font-size: 0.9rem; 
+    color: var(--text-muted); 
+}
+
+.auth-footer-text a { 
+    color: #5A0000; 
+    font-weight: 700; 
+    text-decoration: none; 
+}
+
+.auth-footer-text a:hover {
+    text-decoration: underline;
+}
+
+.alert { 
+    padding: 12px; 
+    border-radius: 8px; 
+    margin-bottom: 20px; 
+    font-size: 0.85rem; 
+    text-align: left;
+}
+
+.alert-error { 
+    background: #FDE8E8; 
+    color: #9B1C1C; 
+    border: 1px solid #F8B4B4; 
+}
+
+.alert-success { 
+    background: #DEF7EC; 
+    color: #03543F; 
+    border: 1px solid #84E1BC; 
+}
+
+/* ================= NAVBAR (Putih, Logo Transparan, Menu Kiri Maroon) ================= */
+.navbar { 
+    background: #FFFFFF; 
+    color: #222222; 
+    padding: 14px 40px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); 
+    border-bottom: 1px solid #EAEAEA;
+    position: sticky; 
+    top: 0; 
+    z-index: 100; 
+}
+
+.nav-left { 
+    display: flex; 
+    align-items: center; 
+    gap: 30px; 
+}
+
+.nav-brand { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    font-weight: 700; 
+    font-size: 1.15rem; 
+    color: #4A0404; 
+    text-decoration: none; 
+}
+
+.nav-brand img { 
+    height: 40px; 
+    width: auto; 
+    object-fit: contain; 
+    background: transparent; 
+}
+
+.nav-menu-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-link { 
+    color: #555555; 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 0.95rem; 
+    padding: 8px 16px; 
+    border-radius: 8px; 
+    transition: all 0.2s ease; 
+}
+
+.nav-link:hover, .nav-link.active { 
+    background: #FDF2F2; 
+    color: #4A0404; 
+}
+
+.nav-right { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+}
+
+.user-badge { 
+    font-size: 0.9rem; 
+    font-weight: 600; 
+    color: #333333;
+    background: #F8F9FA; 
+    padding: 6px 14px; 
+    border-radius: 20px; 
+    border: 1px solid #E5E7EB;
+}
+
+.btn-logout { 
+    background: #4A0404; 
+    color: #FFFFFF; 
+    padding: 9px 18px; 
+    border-radius: 8px; 
+    text-decoration: none; 
+    font-size: 0.9rem; 
+    font-weight: 600; 
+    transition: background 0.2s; 
+}
+
+.btn-logout:hover { 
+    background: #2B0202; 
+}
+
+/* ================= MODAL & UTILITIES ================= */
+.modal { 
+    display: none; 
+    position: fixed; 
+    inset: 0; 
+    background: rgba(0,0,0,0.6); 
+    z-index: 999; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px; 
+}
+
+.modal.show { 
+    display: flex; 
+}
+
+.modal-content { 
+    background: var(--white); 
+    width: 100%; 
+    max-width: 520px; 
+    border-radius: 12px; 
+    padding: 25px; 
+    position: relative; 
+    max-height: 90vh; 
+    overflow-y: auto; 
+    border-top: 5px solid var(--maroon-primary); 
+}
+
+.modal-close { 
+    position: absolute; 
+    top: 15px; 
+    right: 18px; 
+    font-size: 1.5rem; 
+    cursor: pointer; 
+    color: var(--text-muted); 
+    border: none; 
+    background: none; 
+}
+
+.popup-img { 
+    width: 100%; 
+    max-height: 260px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+    margin: 12px 0; 
+}
+
+/* ================= FOOTER ================= */
+.footer { 
+    margin-top: auto; 
+    background: var(--maroon-dark); 
+    color: #E6CCCC; 
+    text-align: center; 
+    padding: 18px; 
+    font-size: 0.85rem; 
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}

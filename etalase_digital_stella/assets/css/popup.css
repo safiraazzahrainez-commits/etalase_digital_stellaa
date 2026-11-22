@@ -1,0 +1,134 @@
+/* ================= STYLING MODAL & POP-UP (project.css) ================= */
+
+.modal { 
+    display: none; 
+    position: fixed; 
+    inset: 0; 
+    background: rgba(0, 0, 0, 0.6); 
+    z-index: 999; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px; 
+}
+
+.modal.show { 
+    display: flex; 
+}
+
+.modal-content { 
+    background: #FFFFFF; 
+    width: 100%; 
+    max-width: 520px; 
+    border-radius: 14px; 
+    padding: 30px; 
+    position: relative; 
+    max-height: 90vh; 
+    overflow-y: auto; 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    border-top: 6px solid #4A0404; 
+    
+    /* Mencegah teks meluber ke samping jika terlalu panjang / tanpa spasi */
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.modal-close { 
+    position: absolute; 
+    top: 15px; 
+    right: 20px; 
+    font-size: 1.6rem; 
+    cursor: pointer; 
+    color: #777777; 
+    border: none; 
+    background: none; 
+}
+
+.modal-close:hover {
+    color: #4A0404;
+}
+
+/* Gambar Preview di dalam Pop-up Detail */
+.popup-img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+/* Khusus untuk teks deskripsi di modal detail */
+#detDesc {
+    margin: 12px 0;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    color: #444;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Tombol Maroon Khas di Modal */
+.btn-maroon {
+    background: #4A0404;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s;
+}
+
+.btn-maroon:hover {
+    background: #2B0202;
+}
+
+/* ================= STYLING NOTIFIKASI TOAST (MODERN) ================= */
+.toast-container {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast-alert {
+    background: #ffffff;
+    color: #1F2937;
+    padding: 14px 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    border-left: 5px solid #4A0404;
+    font-size: 0.92rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 280px;
+    animation: slideInRight 0.3s ease, fadeOut 0.5s ease 3.5s forwards;
+}
+
+.toast-alert.success {
+    border-left-color: #059669; /* Hijau elegan untuk sukses */
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}

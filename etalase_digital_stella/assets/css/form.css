@@ -1,0 +1,256 @@
+/* --- PENGATURAN UMUM & UKURAN TETAP (MENCEGAH LAYAR BERGESER) --- */
+html {
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 25px auto;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- TOP BAR & BANNER --- */
+.top-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 28px;
+}
+
+.banner-box {
+    flex: 1;
+    min-width: 280px;
+    background: linear-gradient(120deg, #4A0404, #2B0202);
+    color: #ffffff;
+    padding: 32px 30px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(74, 4, 4, 0.25);
+    box-sizing: border-box;
+}
+
+.banner-box h2 {
+    font-size: 1.55rem;
+    margin-bottom: 6px;
+}
+
+.banner-box p {
+    font-size: 0.95rem;
+    opacity: 0.95;
+    line-height: 1.4;
+}
+
+/* --- ACTION BAR & PENCARIAN (UKURAN DIKUNCI AGAR TIDAK BERUBAH) --- */
+.action-bar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.search-wrapper {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.search-input {
+    height: 44px;
+    padding: 0 15px;
+    border: 1.5px solid #D5BDBD;
+    border-radius: 8px;
+    width: 200px;
+    outline: none;
+    font-size: 0.9rem;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+.search-input:focus {
+    border-color: #4A0404;
+}
+
+/* Kunci ukuran tombol Cari & Reset agar sama persis dan tidak goyang */
+.btn-search, .btn-reset {
+    width: 85px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.btn-search {
+    background: #4A0404;
+    color: #ffffff;
+    border: none;
+    transition: background 0.2s;
+}
+
+.btn-search:hover {
+    background: #2B0202;
+}
+
+.btn-reset {
+    background: #E5E7EB;
+    color: #374151;
+    border: 1px solid #D1D5DB;
+    transition: background 0.2s;
+}
+
+.btn-reset:hover {
+    background: #D1D5DB;
+}
+
+.btn-add {
+    height: 44px;
+    background: #4A0404;
+    color: #ffffff;
+    border: none;
+    padding: 0 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    box-sizing: border-box;
+    transition: background 0.2s;
+}
+
+.btn-add:hover {
+    background: #2B0202;
+}
+
+/* --- SECTION & GRID KARTU --- */
+.section-title {
+    color: #4A0404;
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+    border-left: 4px solid #4A0404;
+    padding-left: 10px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+    border: 1px solid #EDE0E0;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card-img {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+    background: #eeeeee;
+}
+
+.card-body {
+    padding: 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    color: #4A0404;
+    margin-bottom: 6px;
+}
+
+.card-desc {
+    font-size: 0.88rem;
+    color: #555555;
+    margin-bottom: 14px;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-links {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.btn-link {
+    flex: 1;
+    text-align: center;
+    padding: 7px;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-github {
+    background: #24292E;
+    color: #ffffff;
+}
+
+.btn-live {
+    background: #FDF2F2;
+    color: #4A0404;
+    border: 1px solid #4A0404;
+}
+
+.card-meta {
+    font-size: 0.78rem;
+    color: #777777;
+    border-top: 1px solid #F0E6E6;
+    padding-top: 10px;
+    margin-top: auto;
+}
+
+.card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.btn-edit, .btn-delete {
+    flex: 1;
+    padding: 6px;
+    border-radius: 6px;
+    border: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-edit {
+    background: #F59E0B;
+    color: #ffffff;
+}
+
+.btn-delete {
+    background: #DC2626;
+    color: #ffffff;
+}
